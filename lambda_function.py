@@ -138,12 +138,12 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 # ****************************************
 # ********** Custom Intents **************
 headers = {
-    'X-RapidAPI-Key': "get_key_to_use",
+    'X-RapidAPI-Key': "get_key_to_use",        # put person access key here
     'X-RapidAPI-Host': "tasty.p.rapidapi.com"
     }
 
-# Should ultimately also work with likes/dislikes but
-# Not set up
+# Input (optional): meal (string), time (duration), ingredient (string), cuisine (string)
+# Gets recipes, filters based on input, and randomly chooses one from those that match
 class RecommendMealIntentHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         return ask_utils.is_intent_name("RecommendMealIntent")(handler_input)
@@ -160,9 +160,13 @@ class RecommendMealIntentHandler(AbstractRequestHandler):
         # To check valid tags: print(requests.request("GET", tags_url, headers=headers))
         tags_url = "https://tasty.p.rapidapi.com/tags/list"
         list_url = "https://tasty.p.rapidapi.com/recipes/list"
-        querystring = {'from':str(random.randrange(10)), 'size':"20", 'tags':"", 'q': ""} #from: starting offset, size: how many recipes to collect, tags: filter, q: ingredients
         
-        recipe_list = {'count': 0, 'results':[]}
+        #from: starting offset, size: how many recipes to collect, tags: filter, q: filter by ingredient
+        # randrange to prevent the same recipes being selected every time
+        querystring = {'from':str(random.randrange(10)), 'size':"20", 'tags':"", 'q': ""}
+        
+        recipe_list = {'count': 0, 'results':[]}  # acceptable recipes
+        # recipes that fit a single filter
         meal_filter = None
         cuisine_filter = None
         time_filter = None
@@ -183,7 +187,6 @@ class RecommendMealIntentHandler(AbstractRequestHandler):
             if "T" in time:
                 mins = 0 
                 if "H" in time:
-                    pass_h = False
                     h = time.find("H")
                     mins += int(time[2:h]) * 60
                     if "M" in time:
@@ -332,10 +335,11 @@ class RecommendMealIntentHandler(AbstractRequestHandler):
         return response['results']
 
 
-# Options:
+# User review options:
 #   1. likes
 #   2. likes/willing to retry with corrections
 #   3. dislikes
+# Input (required): recipe (string)
 class ReviewRecipeIntentHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         return ask_utils.is_intent_name("ReviewRecipeIntent")(handler_input)
@@ -348,7 +352,9 @@ class ReviewRecipeIntentHandler(AbstractRequestHandler):
         
         return (handler_input.response_builder.speak(speak_output).ask(speak_output).response)
 
-# Follow up intents - not set up to only activate after ReviewRecipe but should be... 
+# Follow up intents - not set up to only activate after ReviewRecipe
+
+# Input (optional): notes (string)
 class YesIntentHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         return ask_utils.is_intent_name("YesIntent")(handler_input)
@@ -365,6 +371,7 @@ class YesIntentHandler(AbstractRequestHandler):
         
         return (handler_input.response_builder.speak(speak_output).response)
 
+# No input
 class NoIntentHandler(AbstractRequestHandler):
     def can_handle(self, handler_input):
         return ask_utils.is_intent_name("NoIntent")(handler_input)
