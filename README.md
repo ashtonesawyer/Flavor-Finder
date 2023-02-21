@@ -1,7 +1,7 @@
 # Flavor-Finder
 # Overview
 This is the interaction model and (unfinished) fulfillment of an Alexa skill to recommend a recipe. It is comprised of 2 main intents, Recommend a Recipe 
-and Review a Recipe. For CS466 Voice Assistants.
+and Review a Recipe. For Winter23 CS466 - Voice Assistants.
 ## Recommend a Recipe
 ### Description
 The slots for this intent are the meal (breakfast, lunch, etc), cuisine, time available and an available ingredient. A more fully implimented 
