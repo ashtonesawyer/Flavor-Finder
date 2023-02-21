@@ -25,7 +25,9 @@
             "say hi",
             "hi",
             "say hello world",
-            "say hello"
+            "say hello",
+            "hey",
+            "what\u0027s up"
           ]
         },
         {
@@ -37,7 +39,7 @@
           "samples": []
         },
         {
-          "name": "RecomendMealIntent",
+          "name": "RecommendMealIntent",
           "slots": [
             {
               "name": "meal",
@@ -45,7 +47,7 @@
             },
             {
               "name": "cuisine",
-              "type": "nationality"
+              "type": "cuisine"
             },
             {
               "name": "time",
@@ -57,12 +59,114 @@
             }
           ],
           "samples": [
+            "what should I make for a {meal}",
+            "what should I make for an {meal}",
+            "what should i have for a {meal} ",
+            "I want a {meal}",
+            "if I have {ingredients} and {time} what can I make",
+            "I want {cuisine} with {ingredients}",
+            "what can I make for {meal} in {time}",
+            "what can I make that has {ingredients}",
+            "what should I make if i have {ingredients} and {time} to cook",
+            "I have {time} to cook",
+            "What should I eat",
             "What can I make with {ingredients}",
             "What can I make in {time}",
             "I want to eat {cuisine} food",
             "what can I make for {meal}",
             "what should I have for {meal}",
-            "I\u0027m hungry"
+            "I\u0027m hungry",
+            "I want {meal}"
+          ]
+        },
+        {
+          "name": "ReadRecipeIntent",
+          "slots": [
+            {
+              "name": "recipe",
+              "type": "recipe"
+            }
+          ],
+          "samples": [
+            "Walk me through how to make {recipe} ",
+            "Tell me how to cook {recipe}",
+            "Walk me through {recipe}",
+            "Explain {recipe}"
+          ]
+        },
+        {
+          "name": "ReviewRecipeIntent",
+          "slots": [
+            {
+              "name": "recipe",
+              "type": "recipe",
+              "samples": [
+                "It\u0027s name is {recipe}",
+                "the recipe\u0027s name is {recipe} ",
+                "The recipe is called {recipe}",
+                "It\u0027s called {recipe} ",
+                "{recipe}"
+              ]
+            }
+          ],
+          "samples": [
+            "can I review {recipe} ",
+            "i want to recipe a recipe",
+            "I have a review for {recipe} ",
+            "I have a review for a recipe",
+            "Review a recipe",
+            "Can I review a recipe",
+            "Can I talk about {recipe}",
+            "I want to talk about a recipe",
+            "I want to talk about {recipe}",
+            "Comment on {recipe} ",
+            "Review {recipe} ",
+            "I want to review {recipe} ",
+            "Review the recipe for {recipe}",
+            "I want to review a recipe"
+          ]
+        },
+        {
+          "name": "YesIntent",
+          "slots": [
+            {
+              "name": "notes",
+              "type": "notes"
+            }
+          ],
+          "samples": [
+            "oh yeah",
+            "of course but {notes}",
+            "yeah just {notes}",
+            "i suppose so",
+            "i think so it just {notes}",
+            "i think so but {notes}",
+            "i think so",
+            "yes although {notes}",
+            "yes it just {notes}",
+            "for sure but {notes}",
+            "For sure",
+            "yeah but {notes} ",
+            "yeah",
+            "sure but {notes} ",
+            "Sure",
+            "I did but {notes} ",
+            "I did",
+            "Yes but {notes} ",
+            "Yes"
+          ]
+        },
+        {
+          "name": "NoIntent",
+          "slots": [],
+          "samples": [
+            "I hated it",
+            "It was horrible",
+            "It was terrible",
+            "I disliked it",
+            "It wasn\u0027t good",
+            "No",
+            "I didn\u0027t like it"
           ]
         }
       ],
@@ -71,10 +175,23 @@
           "values": [
             {
               "name": {
-                "value": "snack",
+                "value": "dessert",
                 "synonyms": [
-                  "a snack"
+                  "desserts"
                 ]
+              }
+            },
+            {
+              "name": {
+                "value": "appetizer",
+                "synonyms": [
+                  "appetizers"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "snack"
               }
             },
             {
@@ -97,6 +214,61 @@
         },
         {
           "values": [
+            {
+              "name": {
+                "value": "Caribbean"
+              }
+            },
+            {
+              "name": {
+                "value": "Persian"
+              }
+            },
+            {
+              "name": {
+                "value": "Latin American"
+              }
+            },
+            {
+              "name": {
+                "value": "Soul"
+              }
+            },
+            {
+              "name": {
+                "value": "West African"
+              }
+            },
+            {
+              "name": {
+                "value": "African"
+              }
+            },
+            {
+              "name": {
+                "value": "Fusion"
+              }
+            },
+            {
+              "name": {
+                "value": "Indigenous"
+              }
+            },
+            {
+              "name": {
+                "value": "Hawaiian"
+              }
+            },
+            {
+              "name": {
+                "value": "Seafood"
+              }
+            },
+            {
+              "name": {
+                "value": "Middle Eastern"
+              }
+            },
             {
               "name": {
                 "value": "Afghan"
@@ -575,6 +747,11 @@
             {
               "name": {
                 "value": "Kittitian"
+              }
+            },
+            {
+              "name": {
+                "value": "Korean"
               }
             },
             {
@@ -1113,10 +1290,2708 @@
               }
             }
           ],
-          "name": "nationality"
+          "name": "cuisine"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Classic Hash Browns"
+              }
+            },
+            {
+              "name": {
+                "value": "Southern-Style Chocolate Gravy"
+              }
+            },
+            {
+              "name": {
+                "value": "Quick and Easy Home Fries"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Monkey Bread"
+              }
+            },
+            {
+              "name": {
+                "value": "Basic Biscuits"
+              }
+            },
+            {
+              "name": {
+                "value": "Fluffy French Toast"
+              }
+            },
+            {
+              "name": {
+                "value": "Super Easy Egg Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy French Toast Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Downeast Maine Pumpkin Bread"
+              }
+            },
+            {
+              "name": {
+                "value": "Pumpkin Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Power Pink Pitaya Smoothie Bowl"
+              }
+            },
+            {
+              "name": {
+                "value": "Perfect Summer Fruit Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Peanut Butter Banana Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Breakfast Sausage"
+              }
+            },
+            {
+              "name": {
+                "value": "Sarah\u0027s Homemade Applesauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Fluffy Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Cucumber Pear Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Crispy Hash Browns"
+              }
+            },
+            {
+              "name": {
+                "value": "Zucchini Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Blueberry Spinach Protein Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Almond Berry Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Pumpkin Apple Pie Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Fig Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Quick Strawberry Oatmeal Breakfast Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Banana Avocado Yogurt Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Raw Super Food Oat Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Orange Chia Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Spinach and Banana Power Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Breakfast Banana Green Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "PB Banana Oat Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Blueberry Banana Oatmeal Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Overnight Oats Blueberry Smoothie Bowl"
+              }
+            },
+            {
+              "name": {
+                "value": "Mango Oatmeal Breakfast Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Marie\u0027s Healthy Breakfast Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Healthy Blueberry Breakfast Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Classic Bran Muffins"
+              }
+            },
+            {
+              "name": {
+                "value": "Strawberry Oatmeal Breakfast Smoothie"
+              }
+            },
+            {
+              "name": {
+                "value": "Crustless Spinach Quiche"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Scones"
+              }
+            },
+            {
+              "name": {
+                "value": "Air Fryer Mini Croissants with Nutella and Jam"
+              }
+            },
+            {
+              "name": {
+                "value": "Fluffy Microwave Scrambled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Arroz Caldo (Chicken Rice Porridge)"
+              }
+            },
+            {
+              "name": {
+                "value": "Leftover Ham -n- Potato Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Scrambled Egg Muffin Cups"
+              }
+            },
+            {
+              "name": {
+                "value": "Good Old-Fashioned Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Sausage Balls"
+              }
+            },
+            {
+              "name": {
+                "value": "Classic Waffles"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow Cooker Breakfast Burritos"
+              }
+            },
+            {
+              "name": {
+                "value": "Mom\u0027s Zucchini Bread"
+              }
+            },
+            {
+              "name": {
+                "value": "Basic Crêpes"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Sausage Gravy and Biscuits"
+              }
+            },
+            {
+              "name": {
+                "value": "Banana Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Ham and Cheese Sliders"
+              }
+            },
+            {
+              "name": {
+                "value": "French Toast"
+              }
+            },
+            {
+              "name": {
+                "value": "Waffles"
+              }
+            },
+            {
+              "name": {
+                "value": "\"Tadpole in the Hole\" - Breakfast Sausage and Kale Dutch Baby"
+              }
+            },
+            {
+              "name": {
+                "value": "Pumpkin Conchas"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Air Fryer Scrambled Eggs On The Go"
+              }
+            },
+            {
+              "name": {
+                "value": "Pumpkin Waffles with Apple Cider Syrup"
+              }
+            },
+            {
+              "name": {
+                "value": "Donut Pan Egg Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Apple Fritter Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Vegan Pumpkin Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Spicy Gluten-Free Chicken and Cheddar Waffles with Blackberry-Maple Syrup"
+              }
+            },
+            {
+              "name": {
+                "value": "Gingerbread Cinnamon Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Sausage, Egg, and Cheese Breakfast Cookies"
+              }
+            },
+            {
+              "name": {
+                "value": "Crispy Fried Poached Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Mini Cinnamon Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "TikTok Egg Boil"
+              }
+            },
+            {
+              "name": {
+                "value": "Minute Breakfast Burrito"
+              }
+            },
+            {
+              "name": {
+                "value": "Orange Cinnamon Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Southwestern Breakfast Burrito"
+              }
+            },
+            {
+              "name": {
+                "value": "Sheet Pan Breakfast Bake"
+              }
+            },
+            {
+              "name": {
+                "value": "Blender Hollandaise Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Basted Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Carrot Cake Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Overnight Matzo Bake"
+              }
+            },
+            {
+              "name": {
+                "value": "Banana Zucchini Bread"
+              }
+            },
+            {
+              "name": {
+                "value": "Sheet Pan Buttermilk Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Coconut Overnight Oats"
+              }
+            },
+            {
+              "name": {
+                "value": "Air Fryer Cherry Cream Cheese Croissants"
+              }
+            },
+            {
+              "name": {
+                "value": "Chocolate Cereal Breakfast Bars"
+              }
+            },
+            {
+              "name": {
+                "value": "Overnight Breakfast Bake with Ham, Cheese, and Croissants"
+              }
+            },
+            {
+              "name": {
+                "value": "E-Z Drop Biscuits"
+              }
+            },
+            {
+              "name": {
+                "value": "Ultimate Tofu Breakfast Burrito Bowls"
+              }
+            },
+            {
+              "name": {
+                "value": "Queenie\u0027s Killer Tomato Bagel Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Leftover Roast Beef Hash"
+              }
+            },
+            {
+              "name": {
+                "value": "Moroccan Breakfast Skillet"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Savory Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "BLT"
+              }
+            },
+            {
+              "name": {
+                "value": "Meyer Lemon Avocado Toast"
+              }
+            },
+            {
+              "name": {
+                "value": "Smoked Sausage-Potato Hash"
+              }
+            },
+            {
+              "name": {
+                "value": "Smoked Salmon Pizette"
+              }
+            },
+            {
+              "name": {
+                "value": "Breakfast Grits"
+              }
+            },
+            {
+              "name": {
+                "value": "Chickpea Omelette"
+              }
+            },
+            {
+              "name": {
+                "value": "Breakfast Sausage White Cheese Pizza"
+              }
+            },
+            {
+              "name": {
+                "value": "Cheesy Hash Browns"
+              }
+            },
+            {
+              "name": {
+                "value": "Sheet Pan Brunch Totchos"
+              }
+            },
+            {
+              "name": {
+                "value": "Loaded Mashed Potato Cakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Sunny Poutine"
+              }
+            },
+            {
+              "name": {
+                "value": "Early Morning Oven Roasted New Potatoes"
+              }
+            },
+            {
+              "name": {
+                "value": "Homefried Potatoes with Garlic and Bacon"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy Apple Cinnamon Raisin Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Good-Morning Banana Nut Cereal"
+              }
+            },
+            {
+              "name": {
+                "value": "Chocolate Oatmeal Porridge"
+              }
+            },
+            {
+              "name": {
+                "value": "Chocolate Coconut Overnight Oats"
+              }
+            },
+            {
+              "name": {
+                "value": "Vegetable and Feta Latkes"
+              }
+            },
+            {
+              "name": {
+                "value": "Bacon Potato Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "German Potato Pancakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Apple Cinnamon Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Blueberry and Banana Steel Cut Oats"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy Sweet Potato Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Cherry Almond Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Overnight Chai Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Peachy Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Dominican Style Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Cranberry-Orange Spiced Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Carrot Cake Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Vegan Pumpkin Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Healthy Coconut Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "Butterscotch Oatmeal"
+              }
+            },
+            {
+              "name": {
+                "value": "The Best Vegetable Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Tomato Mozzarella Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Bean Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Hot Dog Mummies"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Ramen Noodle Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "How to Make a Tuna Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "Cobb Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Zesty Quinoa Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Garlic Bread Spread"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Pita Bread"
+              }
+            },
+            {
+              "name": {
+                "value": "How to Make Tomato Bisque"
+              }
+            },
+            {
+              "name": {
+                "value": "Eggplant Caponata (Sicilian Version)"
+              }
+            },
+            {
+              "name": {
+                "value": "BLT"
+              }
+            },
+            {
+              "name": {
+                "value": "Christy\u0027s Awesome Hot Ham and Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Greek Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Curried Chicken Tea Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Lemon Chicken Orzo Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Classic Cuban Midnight (Medianoche) Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Lobster Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Corned Beef Special Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Lorraine\u0027s Club Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Dan\u0027s Meat Wrap"
+              }
+            },
+            {
+              "name": {
+                "value": "California Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "Philly Cheesesteak Sandwich with Garlic Mayo"
+              }
+            },
+            {
+              "name": {
+                "value": "California Club Chicken Wraps"
+              }
+            },
+            {
+              "name": {
+                "value": "Cobb Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Tuna Melt (New Jersey Diner Style)"
+              }
+            },
+            {
+              "name": {
+                "value": "After School Antipasto Pinwheel Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Hot Ham and Cheese Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Awesome Turkey Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Pastrami Reuben Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Muffuletta Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Original Homemade Italian Beef"
+              }
+            },
+            {
+              "name": {
+                "value": "Pickled Egg Salad Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Caprese Salad Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Vermicelli Noodle Bowl"
+              }
+            },
+            {
+              "name": {
+                "value": "Avocado Breakfast Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Oyakodon (Japanese Chicken and Egg Rice Bowl)"
+              }
+            },
+            {
+              "name": {
+                "value": "Traditional Gyros"
+              }
+            },
+            {
+              "name": {
+                "value": "Italian Subs - Restaurant Style"
+              }
+            },
+            {
+              "name": {
+                "value": "Monte Cristo Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Homemade Chicken Noodle Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Curried Egg Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "The Denver Omelet"
+              }
+            },
+            {
+              "name": {
+                "value": "Japanese Tamago Egg"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow Cooker Buffalo Chicken Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Natasha\u0027s Chicken Burgers"
+              }
+            },
+            {
+              "name": {
+                "value": "Quick Italian Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Slow Cooker French Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Taco Bell Seasoning Copycat"
+              }
+            },
+            {
+              "name": {
+                "value": "Authentic Russian Salad \u0027Olivye\u0027"
+              }
+            },
+            {
+              "name": {
+                "value": "Sausage, Potato and Kale Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Hawaiian Ham and Cheese Sliders"
+              }
+            },
+            {
+              "name": {
+                "value": "Beet Salad with Goat Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Caprese Salad with Balsamic Reduction"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy French Dip Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Black Bean and Corn Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Sloppy Joes"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow Cooker Italian Beef"
+              }
+            },
+            {
+              "name": {
+                "value": "Three Bean Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Philly Steak Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Day-After-Thanksgiving Turkey Carcass Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Banh Mi"
+              }
+            },
+            {
+              "name": {
+                "value": "Broccoli Cheese Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Creamy Mushroom Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Pasta Salad with Homemade Dressing"
+              }
+            },
+            {
+              "name": {
+                "value": "Caldo de Pollo"
+              }
+            },
+            {
+              "name": {
+                "value": "Ukrainian Red Borscht Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Chicken Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Corn Dogs"
+              }
+            },
+            {
+              "name": {
+                "value": "Super-Delicious Zuppa Toscana"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Potato Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Reuben Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Old Fashioned Potato Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Fresh Tomato Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Cream Of Broccoli Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Grilled Cheese Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Marinated Cucumber, Onion, and Tomato Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Sloppy Joes"
+              }
+            },
+            {
+              "name": {
+                "value": "Delicious Egg Salad for Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Croque Madame"
+              }
+            },
+            {
+              "name": {
+                "value": "Cheesy Tuna Melts"
+              }
+            },
+            {
+              "name": {
+                "value": "Olive Cheese Melts"
+              }
+            },
+            {
+              "name": {
+                "value": "The Hot Brown"
+              }
+            },
+            {
+              "name": {
+                "value": "Vegetarian Open Faced Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Sriracha Quinoa Burger Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "Mini Reubens"
+              }
+            },
+            {
+              "name": {
+                "value": "Tuna Panini Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "Classic Patty Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "The Munroe Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "Shrimp Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Monte Cristo Benedict"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Fajita Melts"
+              }
+            },
+            {
+              "name": {
+                "value": "Quick Black Bean Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Butternut Squash Soup Ever"
+              }
+            },
+            {
+              "name": {
+                "value": "Elbow Macaroni and Kidney Bean Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Cream of Tomato Gorgonzola Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Hearty Italian Meatball Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Norris\u0027 Sesame Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Tuna Fish Pea Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Ranch, Bacon, and Parmesan Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Mexican Bean and Rice Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Shanghai Noodle Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Potato Salad with Balsamic Dressing"
+              }
+            },
+            {
+              "name": {
+                "value": "John\u0027s Pimento Cheese Spread"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s White Gazpacho"
+              }
+            },
+            {
+              "name": {
+                "value": "Lentil Salad with a Persian Twist"
+              }
+            },
+            {
+              "name": {
+                "value": "Turkey and Provolone Sandwiches"
+              }
+            },
+            {
+              "name": {
+                "value": "Sun-Dried Tomato Basil Orzo"
+              }
+            },
+            {
+              "name": {
+                "value": "Grandma\u0027s Easy Turkey Taco Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Sweet Potato Quinoa Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Kelly\u0027s Black Bean Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Carole\u0027s Sesame Chicken Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Avocado Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Asian Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Sesame Noodle Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Refreshing Mint and Tuna Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Cranberry and Cilantro Quinoa Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Kale, Swiss Chard, Chicken, and Feta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Cape Cod Turkey Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Trees, Seeds, and Beans (Broccoli Slaw)"
+              }
+            },
+            {
+              "name": {
+                "value": "Refreshing Lentil Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Kristen\u0027s Bacon Ranch Potato Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Grandma Bellows\u0027 Lemony Shrimp Macaroni Salad with Herbs"
+              }
+            },
+            {
+              "name": {
+                "value": "Edamame Fresca"
+              }
+            },
+            {
+              "name": {
+                "value": "Nippy Pork Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Greek-alicious Pasta Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Lucky\u0027s Gazpacho"
+              }
+            },
+            {
+              "name": {
+                "value": "Buffalo Chicken Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Mediterranean Quinoa Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Southern Dill Potato Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Berry Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Lemon Grass and Chicken Summer Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Soba Noodle Salad with Chicken and Sesame"
+              }
+            },
+            {
+              "name": {
+                "value": "Loaded Egg Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Marinated Black-Eyed Pea Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Tortellini Bacon Broccoli Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Southwestern Quinoa Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Amy\u0027s Kidney Bean Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "BLT Bow Tie Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Antipasto Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Cheese Tortellini Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Green Gazpacho"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazingly Good and Healthy Tuna Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Fresh Spring Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Amazing Gnocchi Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Patricia\u0027s Green Chile Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Fruity Curry Chicken Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy Sweet Potato With Ginger Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Martha\u0027s Vegetable Beef Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Quick and Easy Chicken Noodle Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Cajun Scallop Chowder"
+              }
+            },
+            {
+              "name": {
+                "value": "California Italian Wedding Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Pumpkin Chipotle Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple and Delicious Kale Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Old-Fashioned Potato Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy Chicken and Wild Rice Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Six Can Chicken Tortilla Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Joe\u0027s Homemade Mushroom Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Pasta Fazoolander"
+              }
+            },
+            {
+              "name": {
+                "value": "Pho Ga Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Avocado Soup with Chicken and Lime"
+              }
+            },
+            {
+              "name": {
+                "value": "Campbell\u0027s Tuna Noodle Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Deep Fried Turkey"
+              }
+            },
+            {
+              "name": {
+                "value": "Manicotti"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Lasagna"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Beef Stroganoff"
+              }
+            },
+            {
+              "name": {
+                "value": "Juiciest Hamburgers Ever"
+              }
+            },
+            {
+              "name": {
+                "value": "Turkey Carcass Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Rack of Lamb"
+              }
+            },
+            {
+              "name": {
+                "value": "Marinated Tuna Steak"
+              }
+            },
+            {
+              "name": {
+                "value": "Shrimp Scampi with Pasta"
+              }
+            },
+            {
+              "name": {
+                "value": "Hamburger Steak with Onions and Gravy"
+              }
+            },
+            {
+              "name": {
+                "value": "Spicy Thai Basil Chicken (Pad Krapow Gai)"
+              }
+            },
+            {
+              "name": {
+                "value": "Grilled Cheese Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Ziti"
+              }
+            },
+            {
+              "name": {
+                "value": "Stuffed Peppers"
+              }
+            },
+            {
+              "name": {
+                "value": "Dad\u0027s Leftover Turkey Pot Pie"
+              }
+            },
+            {
+              "name": {
+                "value": "Cilantro Chicken Breasts"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Buttermilk Fried Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Butternut Squash Chicken Street Tacos"
+              }
+            },
+            {
+              "name": {
+                "value": "Mom\u0027s Chicken en Cocotte"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Chicken Cacciatore"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken and Chorizo Chili"
+              }
+            },
+            {
+              "name": {
+                "value": "Drunk Chicken in Gravy"
+              }
+            },
+            {
+              "name": {
+                "value": "Tarragon Chicken and Rice Soup"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Chicken and Dumplings"
+              }
+            },
+            {
+              "name": {
+                "value": "Instant Pot Corned Beef"
+              }
+            },
+            {
+              "name": {
+                "value": "Arroz Con Pollo"
+              }
+            },
+            {
+              "name": {
+                "value": "Oven-Baked Baby Back Ribs"
+              }
+            },
+            {
+              "name": {
+                "value": "Authentic Louisiana Red Beans and Rice"
+              }
+            },
+            {
+              "name": {
+                "value": "Grilled Salmon"
+              }
+            },
+            {
+              "name": {
+                "value": "The Best Meatballs"
+              }
+            },
+            {
+              "name": {
+                "value": "Italian Baked Meatballs"
+              }
+            },
+            {
+              "name": {
+                "value": "Mississippi Pot Roast"
+              }
+            },
+            {
+              "name": {
+                "value": "Tater Tot Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Roast Spatchcock Turkey"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Tuna Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Salisbury Steak"
+              }
+            },
+            {
+              "name": {
+                "value": "A Simply Perfect Roast Turkey"
+              }
+            },
+            {
+              "name": {
+                "value": "Pesto Pasta"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Stir-Fry"
+              }
+            },
+            {
+              "name": {
+                "value": "Oven-Roasted Turkey Breast"
+              }
+            },
+            {
+              "name": {
+                "value": "Juicy Thanksgiving Turkey"
+              }
+            },
+            {
+              "name": {
+                "value": "Absolute Best Liver and Onions"
+              }
+            },
+            {
+              "name": {
+                "value": "Marie\u0027s Easy Slow Cooker Pot Roast"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Italian Meatballs"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Parmesan"
+              }
+            },
+            {
+              "name": {
+                "value": "Turkey in a Smoker"
+              }
+            },
+            {
+              "name": {
+                "value": "To Die For Fettuccine Alfredo"
+              }
+            },
+            {
+              "name": {
+                "value": "Cast Iron Pan-Seared Steak (Oven-Finished)"
+              }
+            },
+            {
+              "name": {
+                "value": "Quick Beef Stir-Fry"
+              }
+            },
+            {
+              "name": {
+                "value": "Sloppy Joes"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Pork Loin"
+              }
+            },
+            {
+              "name": {
+                "value": "Spaghetti Aglio e Olio"
+              }
+            },
+            {
+              "name": {
+                "value": "Corned Beef and Cabbage"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Dumplings"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow-Cooker Corned Beef and Cabbage"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Perfect Prime Rib"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Macaroni and Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Meatloaf"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Pot Pie"
+              }
+            },
+            {
+              "name": {
+                "value": "Juicy Roasted Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow Cooker Texas Pulled Pork"
+              }
+            },
+            {
+              "name": {
+                "value": "Empanadas (Beef Turnovers)"
+              }
+            },
+            {
+              "name": {
+                "value": "World\u0027s Best Lasagna"
+              }
+            },
+            {
+              "name": {
+                "value": "Prosciutto-Wrapped Pork Tenderloin with Crispy Sage"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow Cooker Beef Stew"
+              }
+            },
+            {
+              "name": {
+                "value": "Homemade Mac and Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Basic Air Fryer Hot Dogs"
+              }
+            },
+            {
+              "name": {
+                "value": "Lasagna Flatbread"
+              }
+            },
+            {
+              "name": {
+                "value": "Mississippi Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Corned Beef Roast"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Al Pastor"
+              }
+            },
+            {
+              "name": {
+                "value": "Stout-Braised Lamb Shanks"
+              }
+            },
+            {
+              "name": {
+                "value": "Andie\u0027s Quick \u0027n Easy Sneaky Sloppy Joes"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Chicken Enchiladas"
+              }
+            },
+            {
+              "name": {
+                "value": "Reuben Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Mexican Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Savory Tater Tot Casserole"
+              }
+            },
+            {
+              "name": {
+                "value": "Aunt Carol\u0027s Spinach and Fish Bake"
+              }
+            },
+            {
+              "name": {
+                "value": "The Best Parmesan Chicken Bake"
+              }
+            },
+            {
+              "name": {
+                "value": "Unstuffed Cabbage Roll"
+              }
+            },
+            {
+              "name": {
+                "value": "Philly Steak Sandwich"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Chicken Satay"
+              }
+            },
+            {
+              "name": {
+                "value": "Tofu and Veggies in Peanut Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Frozen Vegetable Stir-Fry"
+              }
+            },
+            {
+              "name": {
+                "value": "Peanut Sauce II"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow Cooker Thai Pork with Peppers"
+              }
+            },
+            {
+              "name": {
+                "value": "Chakchouka (Shakshouka)"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Peanut Curry Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Filet Mignon with Rich Balsamic Glaze"
+              }
+            },
+            {
+              "name": {
+                "value": "Greek Lemon Chicken and Potatoes"
+              }
+            },
+            {
+              "name": {
+                "value": "Mary Pat\u0027s Tuna Melt"
+              }
+            },
+            {
+              "name": {
+                "value": "Quinoa Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Spicy Chicken and Spelt Salad"
+              }
+            },
+            {
+              "name": {
+                "value": "Spicy Asian Ramen Noodles"
+              }
+            },
+            {
+              "name": {
+                "value": "Caramelized Chicken Wings"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Chicken Satay Burger"
+              }
+            },
+            {
+              "name": {
+                "value": "Gourmet Thai Chicken Pizza"
+              }
+            },
+            {
+              "name": {
+                "value": "Five-Ingredient Red Curry Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Peanut Butter Noodles"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Cashew Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Bucatini All\u0027Amatriciana"
+              }
+            },
+            {
+              "name": {
+                "value": "Thai Peanut Stir Fry Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Pork Tenderloin Diablo"
+              }
+            },
+            {
+              "name": {
+                "value": "Peanut Butter Chili"
+              }
+            },
+            {
+              "name": {
+                "value": "Casablanca Chili"
+              }
+            },
+            {
+              "name": {
+                "value": "West African Peanut Stew"
+              }
+            },
+            {
+              "name": {
+                "value": "Delicious Black Bean Burritos"
+              }
+            },
+            {
+              "name": {
+                "value": "Salmon Fillets with Spinach for Two"
+              }
+            },
+            {
+              "name": {
+                "value": "Italian White Bean Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Garlic Chicken Fried Brown Rice"
+              }
+            },
+            {
+              "name": {
+                "value": "Mexican Shakshuka"
+              }
+            },
+            {
+              "name": {
+                "value": "Pork Fried Rice"
+              }
+            },
+            {
+              "name": {
+                "value": "Chana Masala (Savory Indian Chick Peas)"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken with Lemon-Caper Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Quick and Easy Chicken Piquant"
+              }
+            },
+            {
+              "name": {
+                "value": "Lo Mein Noodles"
+              }
+            },
+            {
+              "name": {
+                "value": "Stir-Fry Chicken and Vegetables"
+              }
+            },
+            {
+              "name": {
+                "value": "Egg Curry"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Macaroni and Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s BLT Pasta"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Lemon-Herb Chicken"
+              }
+            },
+            {
+              "name": {
+                "value": "Traditional Filipino Lumpia"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Guacamole"
+              }
+            },
+            {
+              "name": {
+                "value": "Fried Mozzarella Cheese Sticks"
+              }
+            },
+            {
+              "name": {
+                "value": "Asian Lettuce Wraps"
+              }
+            },
+            {
+              "name": {
+                "value": "Old-Fashioned Potato Cakes"
+              }
+            },
+            {
+              "name": {
+                "value": "Slow Cooker Cocktail Smokies"
+              }
+            },
+            {
+              "name": {
+                "value": "Pico de Gallo"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Chicken Wings"
+              }
+            },
+            {
+              "name": {
+                "value": "Southern Pimento Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Bacon-Wrapped Jalapeño Poppers"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Kale Chips"
+              }
+            },
+            {
+              "name": {
+                "value": "The Best Canning Salsa"
+              }
+            },
+            {
+              "name": {
+                "value": "Vietnamese Fresh Spring Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Candied Pecans"
+              }
+            },
+            {
+              "name": {
+                "value": "Seven-Layer Taco Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Garlic Aioli"
+              }
+            },
+            {
+              "name": {
+                "value": "Guacamole"
+              }
+            },
+            {
+              "name": {
+                "value": "Grandmother\u0027s Buttermilk Cornbread"
+              }
+            },
+            {
+              "name": {
+                "value": "Hot Asiago Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Fast and Easy Chip Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Garlic Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Mozzarella Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Leek and Onion Vegetable Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Seafood Dip II"
+              }
+            },
+            {
+              "name": {
+                "value": "Southwest Dipping Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Copycat Dipping Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Ranch-Style Party Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Curry Dip for Crudites"
+              }
+            },
+            {
+              "name": {
+                "value": "Bacon and Cheddar Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Pickle Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Potato Dip II"
+              }
+            },
+            {
+              "name": {
+                "value": "Chip Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy Onion Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Shrimp Cream Cheese Spread"
+              }
+            },
+            {
+              "name": {
+                "value": "Everything Onion Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Instant Pot French Onion Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "World\u0027s Easiest and Most Amazing Two-Ingredient Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Gramp\u0027s Ranch Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Ketchup Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Taco Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Simple Artichoke Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Green Beans"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Egg Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Bisquick Sausage Balls"
+              }
+            },
+            {
+              "name": {
+                "value": "Kettle Corn"
+              }
+            },
+            {
+              "name": {
+                "value": "Chex Muddy Buddies"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Tortilla Chips"
+              }
+            },
+            {
+              "name": {
+                "value": "Fried Chicken Wings"
+              }
+            },
+            {
+              "name": {
+                "value": "Churros"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Tuna Patties"
+              }
+            },
+            {
+              "name": {
+                "value": "Buffalo Chicken Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Balsamic Bruschetta"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Spinach Dip Ever"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Pumpkin Seeds"
+              }
+            },
+            {
+              "name": {
+                "value": "Baked Ham and Cheese Sliders"
+              }
+            },
+            {
+              "name": {
+                "value": "Hot Spinach Artichoke Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Mouth-Watering Stuffed Mushrooms"
+              }
+            },
+            {
+              "name": {
+                "value": "4-Ingredient Bacon Ranch Cheese Ball"
+              }
+            },
+            {
+              "name": {
+                "value": "Empanadas (Beef Turnovers)"
+              }
+            },
+            {
+              "name": {
+                "value": "Bacon-Ranch Cheese Ball"
+              }
+            },
+            {
+              "name": {
+                "value": "Air-Fryer Veggie Sticks"
+              }
+            },
+            {
+              "name": {
+                "value": "Saucy Sriracha Franks"
+              }
+            },
+            {
+              "name": {
+                "value": "Spooky Spider Halloween Hot Dogs"
+              }
+            },
+            {
+              "name": {
+                "value": "Roasted Raspberry Chipotle Mustard Cream Sauce"
+              }
+            },
+            {
+              "name": {
+                "value": "Grilled Halloumi with Herbed Berry Salsa"
+              }
+            },
+            {
+              "name": {
+                "value": "Spicy Chicken Jerky in the Air Fryer"
+              }
+            },
+            {
+              "name": {
+                "value": "Copycat Dot\u0027s Pretzels"
+              }
+            },
+            {
+              "name": {
+                "value": "Cranberry Hummus"
+              }
+            },
+            {
+              "name": {
+                "value": "Air-Fried Raspberry Brie Bites"
+              }
+            },
+            {
+              "name": {
+                "value": "Easy Pepperoni Pizza Muffins"
+              }
+            },
+            {
+              "name": {
+                "value": "Spinach Feta Brownies"
+              }
+            },
+            {
+              "name": {
+                "value": "Chicken Bacon Ranch Dip"
+              }
+            },
+            {
+              "name": {
+                "value": "Bacon-Wrapped Cherries"
+              }
+            },
+            {
+              "name": {
+                "value": "TikTok Shrimp Sushi Bake Cups"
+              }
+            },
+            {
+              "name": {
+                "value": "Loaded Reuben Totchos"
+              }
+            },
+            {
+              "name": {
+                "value": "Air Fryer Halloumi Cheese"
+              }
+            },
+            {
+              "name": {
+                "value": "Air Fryer BBQ Chicken Drummies"
+              }
+            },
+            {
+              "name": {
+                "value": "Pizza Sliders"
+              }
+            },
+            {
+              "name": {
+                "value": "Feta-Spinach Puff Pastry Bites"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy Whipped Feta"
+              }
+            },
+            {
+              "name": {
+                "value": "Chocolate Cereal Breakfast Bars"
+              }
+            },
+            {
+              "name": {
+                "value": "Chinese Sweet Bun Dough"
+              }
+            },
+            {
+              "name": {
+                "value": "Coxinhas (Brazilian Chicken Croquettes)"
+              }
+            },
+            {
+              "name": {
+                "value": "Cheese Bourekas"
+              }
+            },
+            {
+              "name": {
+                "value": "Vietnamese Fresh Spring Rolls"
+              }
+            },
+            {
+              "name": {
+                "value": "Spanakopita II"
+              }
+            },
+            {
+              "name": {
+                "value": "Chinese Prawn Toast"
+              }
+            },
+            {
+              "name": {
+                "value": "Beef Samosas"
+              }
+            },
+            {
+              "name": {
+                "value": "Avocado Shrimp Ceviche-Estillo Sarita"
+              }
+            },
+            {
+              "name": {
+                "value": "Double Tomato Bruschetta"
+              }
+            },
+            {
+              "name": {
+                "value": "Spanish Garlic Shrimp (Gambas al Ajillo)"
+              }
+            },
+            {
+              "name": {
+                "value": "Puerto Rican Tostones (Fried Plantains)"
+              }
+            },
+            {
+              "name": {
+                "value": "Pot Stickers Traditional"
+              }
+            },
+            {
+              "name": {
+                "value": "Traditional Filipino Lumpia"
+              }
+            },
+            {
+              "name": {
+                "value": "Everything Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Classic Savory Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Bacon Cheddar Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Jalapeno Bacon Cheddar Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Perfect Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Kimberly\u0027s Curried Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Creamy Cajun Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Air Fryer Asian-Inspired Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Garlic, Basil, and Bacon Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Harissa Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Crab-Stuffed Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Lebanese Tahini"
+              }
+            },
+            {
+              "name": {
+                "value": "Whipped Garlic"
+              }
+            },
+            {
+              "name": {
+                "value": "Chef John\u0027s Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Japanese Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Avocado and Bacon-Stuffed Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Special Deviled Eggs"
+              }
+            },
+            {
+              "name": {
+                "value": "Labneh (Lebanese Yogurt)"
+              }
+            },
+            {
+              "name": {
+                "value": "Toum"
+              }
+            },
+            {
+              "name": {
+                "value": "Traditional Baba Ghanoush"
+              }
+            },
+            {
+              "name": {
+                "value": "Labneh (Lebanese Cream Cheese)"
+              }
+            },
+            {
+              "name": {
+                "value": "Muhammara (Roasted Pepper \u0026 Walnut Spread)"
+              }
+            },
+            {
+              "name": {
+                "value": "Best Hummus"
+              }
+            }
+          ],
+          "name": "recipe"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "i needs less pepper"
+              }
+            },
+            {
+              "name": {
+                "value": "it needs to cook longer"
+              }
+            },
+            {
+              "name": {
+                "value": "it doesn\u0027t have enough sugar"
+              }
+            },
+            {
+              "name": {
+                "value": "it needs more salt"
+              }
+            }
+          ],
+          "name": "notes"
         }
       ]
-    }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ReviewRecipeIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "recipe",
+              "type": "recipe",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.15799509213.1526882175974"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.15799509213.1526882175974",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the recipe\u0027s name"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is the name of the recipe you want to talk about"
+          },
+          {
+            "type": "PlainText",
+            "value": "Which recipe do you want to talk about"
+          },
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the name of the recipe you want to review"
+          },
+          {
+            "type": "PlainText",
+            "value": "Which recipe do you want to review"
+          }
+        ]
+      }
+    ]
   },
-  "version": "5"
+  "version": "22"
 }
